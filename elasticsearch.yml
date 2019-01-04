@@ -1,0 +1,7 @@
+network.bind_host: 0.0.0.0
+network.host: 0.0.0.0
+discovery.zen.minimum_master_nodes: 1
+bootstrap.memory_lock: true
+discovery.type: single-node
+http.cors.enabled: true
+http.cors.allow-origin: "*"

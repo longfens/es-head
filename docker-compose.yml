@@ -1,0 +1,27 @@
+version: "3"
+services:
+  elasticsearch:
+    image: elasticsearch
+    container_name: es
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"  #配置内存
+    networks:
+      - esnet
+    volumes:
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./data:/usr/share/elasticsearch/data
+
+  elasticsearch-head:
+    image: mobz/elasticsearch-head:5
+    container_name: es-head
+    environment:
+        TZ: 'Asia/Shanghai'
+    ports:
+      - "9100:9100"
+    networks:
+      - esnet
+networks:
+  esnet:
