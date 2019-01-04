@@ -2,7 +2,7 @@
 elasticsearch+head docker安装
 
 ## 1.下载
-`https://github.com/longfens/es-head.git`
+`git clone https://github.com/longfens/es-head.git`
 
 ## 2.安装
 `docker-compose up -d`
