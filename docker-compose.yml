@@ -1,7 +1,7 @@
 version: "3"
 services:
   elasticsearch:
-    image: elasticsearch
+    image: elasticsearch:6.5.4
     container_name: es
     ports:
       - "9200:9200"
@@ -15,7 +15,7 @@ services:
       - ./data:/usr/share/elasticsearch/data
 
   elasticsearch-head:
-    image: mobz/elasticsearch-head:5
+    image: tobias74/elasticsearch-head:6
     container_name: es-head
     environment:
         TZ: 'Asia/Shanghai'
